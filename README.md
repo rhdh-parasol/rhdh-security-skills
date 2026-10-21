@@ -24,15 +24,23 @@ That copies each skill into `.agents/skills/<skill-id>/` (or `~/.agents/skills/`
 
 Invoke by name (`/plugins-package-impact`), never by a sibling category path.
 
+## Non-skill tools
+
+| Tool | Location | Notes |
+| --- | --- | --- |
+| Plugins CVE triager (CronJob scripts) | `tools/plugins-cve-triager/` | Script-only; deploy via `cve-triager-infra`. Not an Agent Skill. |
+
 ## Layout
 
 ```
 .
-├── AGENTS.md                # how to work in this catalog
+├── AGENTS.md
 ├── README.md
-└── skills/                  # catalog (one SKILL.md per skill)
-    └── cve/
-        └── plugins-package-impact/
+├── skills/                  # catalog (one SKILL.md per skill)
+│   └── cve/
+│       └── plugins-package-impact/
+└── tools/                   # not installed as skills
+    └── plugins-cve-triager/
 ```
 
 A skill is a directory that contains `SKILL.md`:
